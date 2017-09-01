@@ -1,6 +1,7 @@
 ## ng2-daterangepicker
 This is an Angular 2+ port of the popular Date Range Picker for Bootstrap http://www.daterangepicker.com/
 
+And forked of https://github.com/evansmwendwa/ng2-daterangepicker
 ### Demos and Sample Usage
 
 For Demos and sample usage of this package see the following code on Plunker
@@ -196,6 +197,7 @@ hideCalendarDaterangepicker
 showCalendarDaterangepicker
 hideDaterangepicker
 showDaterangepicker
+clickSelectDaterangePicker - gives the selectedDate
 ```
 
 Below is a sample usage. You can have multiple methods and implement only the events you want.

@@ -5,7 +5,7 @@ import { DaterangepickerConfig } from './config.service';
 
 import * as $ from "jquery";
 import * as moment from 'moment';
-import 'bootstrap-daterangepicker';
+import 'bootstrap-daterangepicker-ext';
 
 @Directive({
     selector: '[daterangepicker]',
@@ -29,6 +29,7 @@ export class DaterangePickerComponent implements AfterViewInit, OnDestroy, DoChe
     @Output() showCalendarDaterangepicker = new EventEmitter();
     @Output() hideDaterangepicker = new EventEmitter();
     @Output() showDaterangepicker = new EventEmitter();
+    @Output() clickSelectDaterangePicker = new EventEmitter();
 
     constructor(
         private input: ElementRef,
@@ -94,6 +95,14 @@ export class DaterangePickerComponent implements AfterViewInit, OnDestroy, DoChe
             (e:any, picker:any) => {
                 let event = { event: e, picker: picker };
                 this.showDaterangepicker.emit(event);
+            }
+        );
+
+        $(this.input.nativeElement).on('click.selectDate',
+            (e: any, picker: any) => {
+                let event = { event: e, picker: picker };
+                console.log(event);
+                this.clickSelectDaterangePicker.emit(event);
             }
         );
     }

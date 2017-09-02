@@ -1,55 +1,28 @@
-## ng2-daterangepicker
+## ng2-daterangepicker-ext
 This is an Angular 2+ port of the popular Date Range Picker for Bootstrap http://www.daterangepicker.com/
 
-And forked of https://github.com/evansmwendwa/ng2-daterangepicker
-### Demos and Sample Usage
-
-For Demos and sample usage of this package see the following code on Plunker
-
-https://embed.plnkr.co/94HAl4q2ITLnahjhYOY0/
+And forke of https://github.com/evansmwendwa/ng2-daterangepicker
 
 ### Installation
 ```
-npm install ng2-daterangepicker --save
-```
-
-### Usage
-
-Add [Bootstrap](http://getbootstrap.com/) to your project's index.html or include in your workflow
-
-``` html
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-```
-
-**NB: You might want to override icon classes with your own custom icons if you are using Bootstrap 4 without glyphs and without fontawesome. Button icon classes used are below**
-
-```
-fa fa-calendar glyphicon glyphicon-calendar
-fa fa-chevron-left glyphicon glyphicon-chevron-left
-fa fa-chevron-right glyphicon glyphicon-chevron-right
+npm install ng2-daterangepicker-ext --save
 ```
 
 ### SystemJS Mapping
-If you are using a SystemJS setup then map `ng2-daterangepicker` and it's `dependencies` in your `system.config.js` file
+If you are using a SystemJS setup then map `ng2-daterangepicker-ext` and it's `dependencies` in your `system.config.js` file
 
 ``` javascript
 paths: {
-    // paths serve as alias
     'npm:': 'node_modules/'
 },
 map: {
-    // angular bundles
-
-    // add ng2-daterangepicker bundles
-    'ng2-daterangepicker': 'npm:ng2-daterangepicker',
+    'ng2-daterangepicker-ext': 'npm:ng2-daterangepicker-ext',
     'jquery': 'npm:jquery/dist/jquery.js',
     'moment': 'npm:moment',
-    'bootstrap-daterangepicker': 'npm:bootstrap-daterangepicker/daterangepicker.js'
+    'bootstrap-daterangepicker-ext': 'npm:bootstrap-daterangepicker-ext/daterangepicker.js'
 },
 packages: {
-    // other packages already defined
 
-    // ng2-daterangepicker packages
     moment: {
         main: 'moment',
         defaultExtension: 'js'
@@ -65,7 +38,7 @@ packages: {
 import the `Daterangepicker` module in your application module
 
 ``` javascript
-import { Daterangepicker } from 'ng2-daterangepicker';
+import { Daterangepicker } from 'ng2-daterangepicker-ext';
 
 @NgModule({
     imports: [Daterangepicker]
@@ -92,14 +65,9 @@ export class AppComponent {
     };
 
     public selectedDate(value: any, datepicker?: any) {
-        // this is the date the iser selected
         console.log(value);
-
-        // any object can be passed to the selected event and it will be passed back here
         datepicker.start = value.start;
         datepicker.end = value.end;
-
-        // or manupulat your own internal property
         this.daterange.start = value.start;
         this.daterange.end = value.end;
         this.daterange.label = value.label;
@@ -110,7 +78,7 @@ export class AppComponent {
 You can pass global settings that can be overloaded by the `options` object in the daterangepicker instances. Use the `DaterangepickerConfig` service to do so. The service provider is set in the daterangepicker module.
 
 ``` javascript
-import { DaterangepickerConfig } from 'ng2-daterangepicker';
+import { DaterangepickerConfig } from 'ng2-daterangepicker-ext';
 
 @Component({
     selector:'my-app',
@@ -128,14 +96,14 @@ export class AppComponent {
 ```
 
 ## Customizing the CSS
-> **Skip Adding CSS in Head** - You can bundle the css that styles the calendar in your app by copying or importing the contents of `node_modules/ng2-daterangepicker/daterangepicker.component.css` and customizing as you like. When you do so set the `skipCSS` property of the config service to `true` in order for the module to skip adding the css styles in the head.
+> **Skip Adding CSS in Head** - You can bundle the css that styles the calendar in your app by copying or importing the contents of `node_modules/ng2-daterangepicker-ext/daterangepicker.component.css` and customizing as you like. When you do so set the `skipCSS` property of the config service to `true` in order for the module to skip adding the css styles in the head.
 
 > **NB:** Skipping should be done early in your component where the service is used first and before your component has rendered.
 
 > **NB:** Note that the picker dropdown might be added in the body element outside of your component so the css must not be encapsulated by the component. The styles should be added to your global styles.
 
 ``` javascript
-import { DaterangepickerConfig } from 'ng2-daterangepicker';
+import { DaterangepickerConfig } from 'ng2-daterangepicker-ext';
 
 @Component({
     selector:'my-app',
@@ -155,7 +123,7 @@ You can programmatically update the `startDate` and `endDate` in the picker usin
 
 ``` javascript
 import { Component, AfterViewInit, ViewChild  } from '@angular/core';
-import { DaterangePickerComponent } from 'ng2-daterangepicker';
+import { DaterangePickerComponent } from 'ng2-daterangepicker-ext';
 
 @Component({
     selector:'my-app',
@@ -222,18 +190,13 @@ export class AppComponent {
     }
 
     // expected output is an object containing the event and the picker.
-    // your method can be named whaterver you want.
     // you can add multiple params to the method and pass them in the template
     public calendarCanceled(e:any) {
         console.log(e);
-        // e.event
-        // e.picker
     }
 
     public calendarApplied(e:any) {
         console.log(e);
-        // e.event
-        // e.picker
     }
 }
 ```

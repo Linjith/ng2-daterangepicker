@@ -1,6 +1,6 @@
 {
   "name": "ng2-daterangepicker-ext",
-  "version": "2.1.0",
+  "version": "2.1.5",
   "description": "Angular 2 DaterangePicker component",
   "scripts": {
     "ng": "ng",
@@ -23,6 +23,7 @@
   "license": "MIT",
   "files": [
     "README.md",
+    "LICENSE.md",
     "index.js",
     "index.d.ts",
     "daterangepicker.component.css",
@@ -31,8 +32,10 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "dependencies": {
+    "@angular/compiler-cli": "^4.3.6",
+    "@angular/platform-server": "^4.3.6",
     "@types/jquery": "^3.2.12",
-    "bootstrap-daterangepicker-ext": "^2.2.0",
+    "bootstrap-daterangepicker-ext": "^2.2.1",
     "jquery": "^3.1.1",
     "moment": "^2.16.0"
   },

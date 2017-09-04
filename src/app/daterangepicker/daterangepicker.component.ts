@@ -101,7 +101,6 @@ export class DaterangePickerComponent implements AfterViewInit, OnDestroy, DoChe
         $(this.input.nativeElement).on('click.selectDate',
             (e: any, picker: any) => {
                 let event = { event: e, picker: picker };
-                console.log(event);
                 this.clickSelectDaterangePicker.emit(event);
             }
         );

@@ -1,6 +1,6 @@
 {
   "name": "ng2-daterangepicker-ext",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "description": "Angular 2 DaterangePicker component",
   "scripts": {
     "ng": "ng",
